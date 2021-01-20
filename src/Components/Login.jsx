@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Button, Card, Form } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
-
 export default function Login() {
   const [legalWaiverSigned, setLegalWaiver] = useState(false);
   const historyFunc = useHistory();
