@@ -19,12 +19,21 @@ export default function TopNavbar() {
 
   return (
     <>
-      <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home">SugarBit</Navbar.Brand>
+      <Navbar bg="info" expand="lg">
+        <Navbar.Brand href="#home">
+          <div className="d-flex align-items-center">
+            <img
+              style={{ width: "75px" }}
+              src="./images/SugarBitLogo.PNG"
+              alt="SugarBit logo"
+            />
+            {/* <h1>SugarBit</h1> */}
+          </div>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="#home">dashboard</Nav.Link>
+            <Nav.Link href="#dashboard">dashboard</Nav.Link>
             <Nav.Link href="#link">Input page</Nav.Link>
             <NavDropdown title="Health Providers" id="basic-nav-dropdown">
               <NavDropdown.Item
@@ -61,6 +70,17 @@ export default function TopNavbar() {
               <NavDropdown.Divider />
               <NavDropdown.Item target="_blank" href="#action/3.4">
                 Separated link
+              </NavDropdown.Item>
+            </NavDropdown>
+
+            {/* ============================== */}
+
+            <NavDropdown title="more info" id="basic-nav-dropdown">
+              <NavDropdown.Item
+                target="_blank"
+                href="https://www.maccabi4u.co.il/1787-he/Maccabi.aspx"
+              >
+                Maccabi
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
