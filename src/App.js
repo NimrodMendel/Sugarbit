@@ -5,6 +5,7 @@ import InputPage from "./Components/InputPage";
 import Login from "./Components/Login";
 import InfoPagePreventDiabetes from "./Components/InfoPagePreventDiabetes";
 import Dashboard from "./Components/Dashboard";
+import Footer from "./Components/Footer";
 import InfoCopingWithDiabetesDistress from "./Components/InfoCopingWithDiabetesDistress";
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <InfoCopingWithDiabetesDistress />
           </Route>
         </Switch>
+        <Footer />
       </Router>
     </>
   );
