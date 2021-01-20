@@ -5,8 +5,6 @@ export default function Login() {
   const [legalWaiverSigned, setLegalWaiver] = useState(false);
   const historyFunc = useHistory();
 
-  console.log("legalWaiverSigned :>> ", legalWaiverSigned);
-
   const handleFormPage = () => {
     historyFunc.push("/InputPage");
   };
