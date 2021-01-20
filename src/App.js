@@ -1,8 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import InputPage from "./Components/InputPage";
-import Login from "./Components/Login";
+import InputPage from "./components/InputPage";
+import Login from "./components/Login";
 
 function App() {
   return (

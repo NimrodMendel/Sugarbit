@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar } from 'react-bootstrap';
-import SugarBitForm from './components/SugarBitForm';
+import SugarBitForm from "./SugarBitForm";
+
 
 export default function InputPage() {
   return (
