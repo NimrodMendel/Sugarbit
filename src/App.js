@@ -1,24 +1,21 @@
-import logo from './logo.svg';
+import { Navbar } from 'react-bootstrap';
 import './App.css';
+import SugarBitForm from './components/SugarBitForm';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar>
+        <Navbar.Brand href="#home">Sugarbit</Navbar.Brand>
+        <Navbar.Toggle />
+        <Navbar.Collapse className="justify-content-end">
+          <Navbar.Text>
+          Welcome to Sugarbit!
+          </Navbar.Text>
+        </Navbar.Collapse>
+      </Navbar>
+      <SugarBitForm />
+      </>
   );
 }
 
