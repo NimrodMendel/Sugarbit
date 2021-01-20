@@ -5,8 +5,6 @@ export default function Login() {
   const [legalWaiverSigned, setLegalWaiver] = useState(false);
   const historyFunc = useHistory();
 
-  console.log("legalWaiverSigned :>> ", legalWaiverSigned);
-
   const handleFormPage = () => {
     historyFunc.push("/InputPage");
   };
@@ -14,17 +12,17 @@ export default function Login() {
   return (
     <>
       <Card
-        bg="secondary"
+        bg="light"
         className="d-flex justify-content-center mx-auto mt-4 "
         style={{ maxWidth: "1200px" }}
       >
-        <Card.Title>
-          <h1>welcome to SugarBit</h1>
+        <Card.Title className="m-3">
+          <h1>Welcome to SugarBit!</h1>
         </Card.Title>
-        <Card.Body className="d-flex flex-column justify-content-between p-2">
+        <Card.Body className="d-flex flex-column justify-content-between p-2 m-2">
           <div className="d-flex flex-column justify-content-between">
             <p className="card-text">
-              Approximately 88 million American adults—more than 1 in 3—have
+              Approximately 88 million American adults — more than 1 in 3 — have
               prediabetes. Of those with prediabetes, more than 84% don’t know
               they have it. Prediabetes puts you at increased risk of developing
               type 2 diabetes. Also, one quarter of Americans already have
@@ -33,20 +31,19 @@ export default function Login() {
             <p>
               SugarBit is here to help you identify whether you have a higher
               risk to develop or could already have developed diabetes type 2
-              and guide you through this proses
+              and guide you through this process.
             </p>
           </div>
           <div>
             <h4>Terms of service</h4>
             <p>
-              By clicking on this button you agree to the use of the "Sugar
-              Beat" application in accordance with the regulations. The
+              By clicking on this button you agree to the use of the "SugarBit" application in accordance with the regulations. The
               application is intended to provide a general probability regarding
               the chance of developing type 2 diabetes and is not a substitute
               for personal medical advice. For any problem or question, please
               contact your attending physician.
             </p>
-            <div className="d-flex justify-content-between m-5">
+            <div className="d-flex justify-content-between">
               <Form.Group controlId="formBasicCheckbox">
                 <Form.Check
                   type="checkbox"
@@ -62,7 +59,7 @@ export default function Login() {
               disabled={!legalWaiverSigned}
               onClick={handleFormPage}
             >
-              lets get started{" "}
+              Lets get started{" "}
             </Button>
           </div>
         </Card.Body>
