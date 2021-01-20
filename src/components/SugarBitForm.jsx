@@ -174,8 +174,8 @@ function SugarBitForm() {
                         onChange={e => setRegularMedicine(e.target.value)}
                     >
                         <option value="-1">Choose...</option>
-                        <option value="1">Yes</option>
-                        <option value="0">No</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
                     </Form.Control>
                 </Form.Group>
             </Form.Row>

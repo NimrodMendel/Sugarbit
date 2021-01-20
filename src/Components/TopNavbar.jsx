@@ -46,7 +46,7 @@ export default function TopNavbar() {
             >
               Dashboard
             </Nav.Link>
-            <NavDropdown title="More info" id="basic-nav-dropdown">
+            <NavDropdown title="More info " id="basic-nav-dropdown">
               <NavDropdown.Item
                 onClick={() => {
                   switchPage("InfoPagePreventDiabetes");
@@ -55,7 +55,7 @@ export default function TopNavbar() {
                 Ways to Prevent Type 2 Diabetes
               </NavDropdown.Item>
             </NavDropdown>
-            <NavDropdown title="Health Providers" id="basic-nav-dropdown">
+            <NavDropdown title="Health Providers " id="basic-nav-dropdown">
               <NavDropdown.Item
                 target="_blank"
                 href="https://www.maccabi4u.co.il/1787-he/Maccabi.aspx"
