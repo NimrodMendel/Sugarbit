@@ -19,7 +19,7 @@ export default function TopNavbar() {
 
   return (
     <>
-      <Navbar bg="info" expand="lg">
+      <Navbar bg="light" variant="light">
         <Navbar.Brand href="#home">
           <div className="d-flex align-items-center">
             <img
@@ -27,7 +27,6 @@ export default function TopNavbar() {
               src="./images/SugarBitLogo.PNG"
               alt="SugarBit logo"
             />
-            {/* <h1>SugarBit</h1> */}
           </div>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -38,16 +37,16 @@ export default function TopNavbar() {
                 switchPage("InputPage");
               }}
             >
-              Input page
+              Risk Calculator
             </Nav.Link>
             <Nav.Link
               onClick={() => {
                 switchPage("Dashboard");
               }}
             >
-              dashboard
+              Dashboard
             </Nav.Link>
-            <NavDropdown title="more info" id="basic-nav-dropdown">
+            <NavDropdown title="More info" id="basic-nav-dropdown">
               <NavDropdown.Item
                 onClick={() => {
                   switchPage("InfoPagePreventDiabetes");
@@ -96,20 +95,15 @@ export default function TopNavbar() {
                 IDF Medical Corps
               </NavDropdown.Item>
 
-              <NavDropdown.Divider />
             </NavDropdown>
           </Nav>
-          <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-success">Search</Button>
-          </Form>
           <Button
             variant="danger"
             onClick={() => {
               switchPage("");
             }}
           >
-            LogOut
+            Logout
           </Button>
         </Navbar.Collapse>
       </Navbar>
