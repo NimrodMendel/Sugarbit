@@ -1,21 +1,23 @@
-import { Navbar } from 'react-bootstrap';
-import './App.css';
-import SugarBitForm from './components/SugarBitForm';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import InputPage from "./Components/InputPage";
+import Login from "./Components/Login";
 
 function App() {
   return (
     <>
-      <Navbar>
-        <Navbar.Brand href="#home">Sugarbit</Navbar.Brand>
-        <Navbar.Toggle />
-        <Navbar.Collapse className="justify-content-end">
-          <Navbar.Text>
-          Welcome to Sugarbit!
-          </Navbar.Text>
-        </Navbar.Collapse>
-      </Navbar>
-      <SugarBitForm />
-      </>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Login />
+          </Route>
+          <Route path="/InputPage">
+            <InputPage />
+          </Route>
+        </Switch>
+      </Router>
+    </>
   );
 }
 
