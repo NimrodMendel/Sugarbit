@@ -9,10 +9,10 @@ import { Form, Button, Col } from 'react-bootstrap';
 //smoking(yes, no), 
 //alcohol(yes, no), 
 //regularMedicine(yes, no),
-//junkFood (ocasionally,often, veryoften,always), 
+//junkFood (ocasionally,often, veryoften,always),
 //stress,(sometimes, veryoften, not at all, always),
 //bloodPressureLevel(normal,high,low)
-//prediabetes(yes, no), 
+//prediabetes(yes, no),
 //urinationFrequency, (not much, quite often)
 //pregnanciesNumber (int)
 //bmi (float)
@@ -296,6 +296,4 @@ function SugarBitForm() {
     )
 }
 
-export default SugarBitForm
-
-
+export default SugarBitForm;
