@@ -33,8 +33,29 @@ export default function TopNavbar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="#dashboard">dashboard</Nav.Link>
-            <Nav.Link href="#link">Input page</Nav.Link>
+            <Nav.Link
+              onClick={() => {
+                switchPage("InputPage");
+              }}
+            >
+              Input page
+            </Nav.Link>
+            <Nav.Link
+              onClick={() => {
+                switchPage("Dashboard");
+              }}
+            >
+              dashboard
+            </Nav.Link>
+            <NavDropdown title="more info" id="basic-nav-dropdown">
+              <NavDropdown.Item
+                onClick={() => {
+                  switchPage("InfoPagePreventDiabetes");
+                }}
+              >
+                Ways to Prevent Type 2 Diabetes
+              </NavDropdown.Item>
+            </NavDropdown>
             <NavDropdown title="Health Providers" id="basic-nav-dropdown">
               <NavDropdown.Item
                 target="_blank"
@@ -42,24 +63,32 @@ export default function TopNavbar() {
               >
                 Maccabi
               </NavDropdown.Item>
+              <NavDropdown.Divider />
+
               <NavDropdown.Item
                 target="_blank"
                 href="https://www.meuhedet.co.il/en/"
               >
                 Meuhedet
               </NavDropdown.Item>
+              <NavDropdown.Divider />
+
               <NavDropdown.Item
                 target="_blank"
                 href="https://www.clalit.co.il/he/info/entitlements/Pages/englishrights.aspx"
               >
                 Clalit
               </NavDropdown.Item>
+              <NavDropdown.Divider />
+
               <NavDropdown.Item
                 target="_blank"
                 href="https://www.leumit.co.il/eng/home/"
               >
                 Leumit
               </NavDropdown.Item>
+              <NavDropdown.Divider />
+
               <NavDropdown.Item
                 target="_blank"
                 href="https://www.idf.il/%D7%90%D7%AA%D7%A8%D7%99%D7%9D/%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99-%D7%A8%D7%A4%D7%95%D7%90%D7%94/"
@@ -68,26 +97,20 @@ export default function TopNavbar() {
               </NavDropdown.Item>
 
               <NavDropdown.Divider />
-              <NavDropdown.Item target="_blank" href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
-
-            {/* ============================== */}
-
-            <NavDropdown title="more info" id="basic-nav-dropdown">
-              <NavDropdown.Item
-                target="_blank"
-                href="https://www.maccabi4u.co.il/1787-he/Maccabi.aspx"
-              >
-                Maccabi
-              </NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Form inline>
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
             <Button variant="outline-success">Search</Button>
           </Form>
+          <Button
+            variant="danger"
+            onClick={() => {
+              switchPage("");
+            }}
+          >
+            LogOut
+          </Button>
         </Navbar.Collapse>
       </Navbar>
     </>
