@@ -6,7 +6,7 @@ export default function InfoCopingWithDiabetesDistress() {
     <>
       <TopNavbar />
 
-      <div className="text-justify">
+      <div className="text-justify mx-5 px-5 mt-2">
         <h1>10 Tips for Coping with Diabetes Distress</h1>
         <p>
           Managing diabetes can be hard. Sometimes you may feel overwhelmed.

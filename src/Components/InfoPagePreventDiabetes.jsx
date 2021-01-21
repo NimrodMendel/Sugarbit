@@ -5,7 +5,7 @@ export default function InfoPagePreventDiabetes() {
   return (
     <>
       <TopNavbar />
-      <div className="text-justify mx-5 px-5 ">
+      <div className="text-justify mx-5 px-5 mt-2 ">
         <h1>13 Ways to Prevent Type 2 Diabetes</h1>
         <p>
           Type 2 diabetes is a chronic disease that affects millions of people
