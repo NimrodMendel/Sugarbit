@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Form, Button, Col, Alert } from "react-bootstrap";
-import { sentData } from "../lip/api";
+import { sentData } from "../lib/api";
 import { useGlobal } from 'reactn';
 
 function SugarBitForm() {

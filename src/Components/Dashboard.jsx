@@ -4,11 +4,10 @@ import TopNavbar from "./TopNavbar";
 import { useGlobal } from 'reactn';
 
 export default function Dashboard() {
-  ////////////////////////////////////
+
   const [global, setGlobal] = useGlobal()
   const mockData = global;
   const mockDataToJson = JSON.stringify(mockData);
-  ////////////////////////////////////
   const results = JSON.parse(mockDataToJson);
   const probability = parseFloat(results.prob).toFixed(2) * 100;
 
