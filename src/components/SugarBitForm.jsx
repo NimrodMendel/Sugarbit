@@ -57,9 +57,9 @@ function SugarBitForm() {
 
   return (
 
-    <Form id="heathForm" onSubmit={handleFormSubmit}>
+    <Form className="m-4" id="heathForm" onSubmit={handleFormSubmit}>
       <Form.Row>
-        <Form.Group as={Col}>
+        <Form.Group className="m-1 p-1" as={Col}>
           <Form.Label>Age</Form.Label>
           <Form.Control
             as="select"
@@ -74,7 +74,7 @@ function SugarBitForm() {
             <option value="60 or older">60 or older </option>
           </Form.Control>
         </Form.Group>
-        <Form.Group as={Col}>
+        <Form.Group className="m-1 p-1" as={Col}>
           <Form.Label>Gender</Form.Label>
           <Form.Control
             as="select"
@@ -87,7 +87,7 @@ function SugarBitForm() {
             <option value="Female">Female</option>
           </Form.Control>
         </Form.Group>
-        <Form.Group as={Col}>
+        <Form.Group className="m-1 p-1" as={Col}>
           <Form.Label>Family Diabetes</Form.Label>
           <Form.Control
             as="select"
@@ -100,7 +100,7 @@ function SugarBitForm() {
             <option value="no">No</option>
           </Form.Control>
         </Form.Group>
-        <Form.Group as={Col}>
+        <Form.Group className="m-1 p-1" as={Col}>
           <Form.Label>High Blood Pressure</Form.Label>
           <Form.Control
             as="select"
@@ -115,7 +115,7 @@ function SugarBitForm() {
         </Form.Group>
       </Form.Row>
       <Form.Row>
-        <Form.Group as={Col}>
+        <Form.Group className="m-1 p-1" as={Col}>
           <Form.Label>Physically Active</Form.Label>
           <Form.Control
             as="select"
@@ -130,7 +130,7 @@ function SugarBitForm() {
             <option value="none">None</option>
           </Form.Control>
         </Form.Group>
-        <Form.Group as={Col}>
+        <Form.Group className="m-1 p-1" as={Col}>
           <Form.Label>Smoking</Form.Label>
           <Form.Control
             as="select"
@@ -143,7 +143,7 @@ function SugarBitForm() {
             <option value="no">No</option>
           </Form.Control>
         </Form.Group>
-        <Form.Group as={Col}>
+        <Form.Group className="m-1 p-1" as={Col}>
           <Form.Label>Alcohol</Form.Label>
           <Form.Control
             as="select"
@@ -156,7 +156,7 @@ function SugarBitForm() {
             <option value="no">No</option>
           </Form.Control>
         </Form.Group>
-        <Form.Group as={Col}>
+        <Form.Group className="m-1 p-1" as={Col}>
           <Form.Label>Regular Medicine</Form.Label>
           <Form.Control
             as="select"
@@ -171,7 +171,7 @@ function SugarBitForm() {
         </Form.Group>
       </Form.Row>
       <Form.Row>
-        <Form.Group as={Col}>
+        <Form.Group className="m-1 p-1" as={Col}>
           <Form.Label>Junk Food</Form.Label>
           <Form.Control
             as="select"
@@ -186,7 +186,7 @@ function SugarBitForm() {
             <option value="always">Always</option>
           </Form.Control>
         </Form.Group>
-        <Form.Group as={Col}>
+        <Form.Group className="m-1 p-1" as={Col}>
           <Form.Label>Stress</Form.Label>
           <Form.Control
             as="select"
@@ -201,7 +201,7 @@ function SugarBitForm() {
             <option value="always">Always</option>
           </Form.Control>
         </Form.Group>
-        <Form.Group as={Col}>
+        <Form.Group className="m-1 p-1" as={Col}>
           <Form.Label>Blood Pressure Level</Form.Label>
           <Form.Control
             as="select"
@@ -215,7 +215,7 @@ function SugarBitForm() {
             <option value="low">Low</option>
           </Form.Control>
         </Form.Group>
-        <Form.Group as={Col}>
+        <Form.Group className="m-1 p-1" as={Col}>
           <Form.Label>Prediabetes</Form.Label>
           <Form.Control
             as="select"
@@ -228,7 +228,7 @@ function SugarBitForm() {
             <option value="no">No</option>
           </Form.Control>
         </Form.Group>
-        <Form.Group as={Col}>
+        <Form.Group className="m-1 p-1" as={Col}>
           <Form.Label>Urination Frequency</Form.Label>
           <Form.Control
             as="select"
@@ -243,7 +243,7 @@ function SugarBitForm() {
         </Form.Group>
       </Form.Row>
       <Form.Row>
-        <Form.Group as={Col}>
+        <Form.Group className="m-1 p-1" as={Col}>
           <Form.Label>Number of Pregnancies</Form.Label>
           <Form.Control
             type="number"
@@ -252,7 +252,7 @@ function SugarBitForm() {
             onChange={(e) => setPregnanciesNumber(e.target.value)}
           />
         </Form.Group>
-        <Form.Group as={Col}>
+        <Form.Group className="m-1 p-1" as={Col}>
           <Form.Label>BMI</Form.Label>
           <Form.Control
             type="float"
@@ -261,7 +261,7 @@ function SugarBitForm() {
             onChange={(e) => setBmi(e.target.value)}
           />
         </Form.Group>
-        <Form.Group as={Col}>
+        <Form.Group className="m-1 p-1" as={Col}>
           <Form.Label>Sleep</Form.Label>
           <Form.Control
             type="float"
@@ -270,7 +270,7 @@ function SugarBitForm() {
             onChange={(e) => setSleep(e.target.value)}
           />
         </Form.Group>
-        <Form.Group as={Col}>
+        <Form.Group className="m-1 p-1" as={Col}>
           <Form.Label>Sleep Sound</Form.Label>
           <Form.Control
             type="float"
@@ -280,7 +280,7 @@ function SugarBitForm() {
           />
         </Form.Group>
       </Form.Row>
-      <Button variant="warning" type="submit">
+      <Button className="mt-4 centered" variant="warning" type="submit">
         Submit
       </Button>
       {alert && alert.pred === '0' ?

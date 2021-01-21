@@ -15,7 +15,7 @@ export default function Dashboard() {
   return (
     <>
       <TopNavbar />
-      <div id="dashboard">
+      <div className="m-4" id="dashboard">
         <h3>Risk Probability</h3>
         {probability >= 70 ? (
           <ProgressBar
