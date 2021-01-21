@@ -39,7 +39,7 @@ export default function TopNavbar() {
             >
               Dashboard
             </Nav.Link>
-            <NavDropdown title="More info" id="basic-nav-dropdown">
+            <NavDropdown title="More info " id="basic-nav-dropdown">
               <NavDropdown.Item
                 onClick={() => {
                   switchPage("InfoPagePreventDiabetes");
