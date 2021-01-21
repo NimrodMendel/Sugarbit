@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import { Form, Button, Col } from "react-bootstrap";
+import { Form, Button, Col, Alert } from "react-bootstrap";
 import { sentData } from "../lip/api";
 //age (>40, 40-49,50-59,60<),
 //gender(male, female),
@@ -38,6 +38,7 @@ function SugarBitForm() {
   const [sleep, setSleep] = useState();
   const [sleepSound, setSleepSound] = useState();
   const [areAllFieldFilled, setAreAllFieldFilled] = useState(true);
+  const [alert, setAlert] = useState();
 
   //   if (
   //     age &&
@@ -110,13 +111,15 @@ function SugarBitForm() {
       Sleep: sleep,
       SoundSleep: sleepSound,
     };
-    const formDataJson = JSON.stringify(allFormData);
-    // console.log(formDataJson);
-    const sentDataResult = await sentData(formDataJson);
+    const sentDataResult = await sentData(allFormData);
+    //console.log(sentDataResult);
     console.log("sentDataResult :>> ", sentDataResult);
+    setAlert(sentDataResult)
+    
   };
 
   return (
+    
     <Form id="heathForm" onSubmit={handleFormSubmit}>
       <Form.Row>
         <Form.Group as={Col}>
@@ -335,6 +338,13 @@ function SugarBitForm() {
       <Button disabled={!areAllFieldFilled} variant="primary" type="submit">
         Submit
       </Button>
+      {alert ? 
+      <Alert style={{marginTop:'30px', textAlign:'center'}} variant={'primary'}>
+      {'Result: ' + alert.pred + ', ' + alert.prob}
+      </Alert>
+      :<></>
+    }
+      
     </Form>
   );
 }

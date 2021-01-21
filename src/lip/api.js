@@ -1,17 +1,13 @@
 import axios from "axios";
 
-const baseUrl = `http://localhost:5000`;
+const baseUrl = `https://sugarbit.herokuapp.com/api`;
 
 export const sentData = async (obj) => {
-  let result;
-  await axios
-    .post(`${baseUrl}/`, obj)
-    .then(function (response) {
-      result = response.data;
-      return result;
-    })
-    .catch(function (error) {
-      console.error(error);
-    });
-  return result;
+  try {
+    const resp = await axios.post(baseUrl, obj);
+     return resp.data 
+} catch (err) {
+    // Handle Error Here
+    return console.error(err);
+}
 };
