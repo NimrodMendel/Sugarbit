@@ -1,23 +1,6 @@
 import { React, useState } from "react";
 import { Form, Button, Col, Alert } from "react-bootstrap";
 import { sentData } from "../lip/api";
-//age (>40, 40-49,50-59,60<),
-//gender(male, female),
-//familyDiabetes (yes,no),
-//highBloodPressure(yes, no),
-//physicallyActive(yes, no),
-//smoking(yes, no),
-//alcohol(yes, no),
-//regularMedicine(yes, no),
-//junkFood (ocasionally,often, veryoften,always),
-//stress,(sometimes, veryoften, not at all, always),
-//bloodPressureLevel(normal,high,low)
-//prediabetes(yes, no),
-//urinationFrequency, (not much, quite often)
-//pregnanciesNumber (int)
-//bmi (float)
-//sleep (hours of sleep)
-//sleepSound (hours of sleepSound)
 
 function SugarBitForm() {
   const [age, setAge] = useState("");
@@ -62,14 +45,12 @@ function SugarBitForm() {
       SoundSleep: sleepSound,
     };
     const sentDataResult = await sentData(allFormData);
-    //console.log(sentDataResult);
-    console.log("sentDataResult :>> ", sentDataResult);
     setAlert(sentDataResult)
-    
+
   };
 
   return (
-    
+
     <Form id="heathForm" onSubmit={handleFormSubmit}>
       <Form.Row>
         <Form.Group as={Col}>
@@ -78,7 +59,7 @@ function SugarBitForm() {
             as="select"
             defaultValue="Choose..."
             value={age}
-            onChange={(e) => setAge(e.target.value) }
+            onChange={(e) => setAge(e.target.value)}
           >
             <option value="-1">Choose...</option>
             <option value="less than 40">less than 40</option>
@@ -271,7 +252,7 @@ function SugarBitForm() {
             type="float"
             placeholder="Please enter your BMI"
             value={bmi}
-            onChange={(e) => setBmi(e.target.value) }
+            onChange={(e) => setBmi(e.target.value)}
           />
         </Form.Group>
         <Form.Group as={Col}>
@@ -296,13 +277,13 @@ function SugarBitForm() {
       <Button variant="warning" type="submit">
         Submit
       </Button>
-      {alert ? 
-      <Alert style={{marginTop:'30px', textAlign:'center'}} variant={'primary'}>
-      {'Result: ' + alert.pred + ', ' + alert.prob}
-      </Alert>
-      :<></>
-    }
-      
+      {alert ?
+        <Alert style={{ marginTop: '30px', textAlign: 'center' }} variant={'primary'}>
+          {'Result: ' + alert.pred + ', ' + alert.prob}
+        </Alert>
+        : <></>
+      }
+
     </Form>
   );
 }
