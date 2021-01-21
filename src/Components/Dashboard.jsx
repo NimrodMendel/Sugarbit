@@ -2,21 +2,19 @@ import React from "react";
 import { Alert, ProgressBar } from "react-bootstrap";
 import TopNavbar from "./TopNavbar";
 import { useGlobal } from 'reactn';
+
 export default function Dashboard() {
-  ////////////////////////////////////
+
   const [global, setGlobal] = useGlobal()
   const mockData = global;
   const mockDataToJson = JSON.stringify(mockData);
-  ////////////////////////////////////
   const results = JSON.parse(mockDataToJson);
   const probability = parseFloat(results.prob).toFixed(2) * 100;
-
-  console.log(probability);
 
   return (
     <>
       <TopNavbar />
-      <div id="dashboard">
+      <div className="m-4" id="dashboard">
         <h3>Risk Probability</h3>
         {probability >= 70 ? (
           <ProgressBar
