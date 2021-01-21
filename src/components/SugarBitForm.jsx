@@ -1,4 +1,5 @@
 import { React, useState } from "react";
+import { useHistory } from "react-router-dom";
 import { Form, Button, Col, Alert } from "react-bootstrap";
 import { sentData } from "../lip/api";
 import { useGlobal } from 'reactn';
@@ -24,6 +25,7 @@ function SugarBitForm() {
   const [alert, setAlert] = useState();
   const [global, setGlobal] = useGlobal()
 
+  const history = useHistory();
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -48,9 +50,9 @@ function SugarBitForm() {
       SoundSleep: sleepSound,
     };
     const sentDataResult = await sentData(allFormData);
-    //console.log(sentDataResult);
     setGlobal(sentDataResult);
-    setAlert(sentDataResult)
+    setAlert(sentDataResult);
+    history.push("/dashboard")
   };
 
   return (
