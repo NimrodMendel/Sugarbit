@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import { Form, Button, Col, Alert } from "react-bootstrap";
 import { sentData } from "../lip/api";
+import { useGlobal } from 'reactn';
 
 function SugarBitForm() {
   const [age, setAge] = useState("");
@@ -21,6 +22,8 @@ function SugarBitForm() {
   const [sleep, setSleep] = useState();
   const [sleepSound, setSleepSound] = useState();
   const [alert, setAlert] = useState();
+  const [global, setGlobal] = useGlobal()
+
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -45,8 +48,9 @@ function SugarBitForm() {
       SoundSleep: sleepSound,
     };
     const sentDataResult = await sentData(allFormData);
+    //console.log(sentDataResult);
+    setGlobal(sentDataResult);
     setAlert(sentDataResult)
-
   };
 
   return (
@@ -231,7 +235,7 @@ function SugarBitForm() {
             onChange={(e) => setUrinationFrequency(e.target.value)}
           >
             <option value="-1">Choose...</option>
-            <option value="quiten often">Quite often</option>
+            <option value="quite often">Quite often</option>
             <option value="not much">Not much</option>
           </Form.Control>
         </Form.Group>
@@ -277,12 +281,16 @@ function SugarBitForm() {
       <Button variant="warning" type="submit">
         Submit
       </Button>
-      {alert ?
-        <Alert style={{ marginTop: '30px', textAlign: 'center' }} variant={'primary'}>
-          {'Result: ' + alert.pred + ', ' + alert.prob}
+      {alert && alert.pred === '0' ?
+        <Alert style={{ marginTop: '30px', textAlign: 'center' }} variant={'success'}>
+          {'Result: ' + alert.pred + ', ' + alert.prob + ' -->Go to Dashboard to see your status.'}
         </Alert>
-        : <></>
-      }
+        : <></>}
+      {alert && alert.pred === '1' ?
+        <Alert style={{ marginTop: '30px', textAlign: 'center' }} variant={'danger'}>
+          {'Result: ' + alert.pred + ', ' + alert.prob + ' -->Go to Dashboard to see your status.'}
+        </Alert>
+        : <></>}
 
     </Form>
   );
