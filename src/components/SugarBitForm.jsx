@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import { Form, Button, Col, Alert } from "react-bootstrap";
 import { sentData } from "../lip/api";
+import { useGlobal } from 'reactn';
 //age (>40, 40-49,50-59,60<),
 //gender(male, female),
 //familyDiabetes (yes,no),
@@ -39,7 +40,7 @@ function SugarBitForm() {
   const [sleepSound, setSleepSound] = useState();
   const [areAllFieldFilled, setAreAllFieldFilled] = useState(true);
   const [alert, setAlert] = useState();
-
+  const [ global, setGlobal ] = useGlobal()
   //   if (
   //     age &&
   //     gender &&
@@ -113,6 +114,7 @@ function SugarBitForm() {
     };
     const sentDataResult = await sentData(allFormData);
     //console.log(sentDataResult);
+    setGlobal(sentDataResult);
     console.log("sentDataResult :>> ", sentDataResult);
     setAlert(sentDataResult)
     
@@ -338,12 +340,16 @@ function SugarBitForm() {
       <Button disabled={!areAllFieldFilled} variant="primary" type="submit">
         Submit
       </Button>
-      {alert ? 
-      <Alert style={{marginTop:'30px', textAlign:'center'}} variant={'primary'}>
-      {'Result: ' + alert.pred + ', ' + alert.prob}
+      {alert && alert.pred === '0' ?   
+      <Alert style={{marginTop:'30px', textAlign:'center'}} variant={'success'}>
+      {'Result: ' + alert.pred + ', ' + alert.prob + ' -->Go to Dashboard to see your status.'}
       </Alert>
-      :<></>
-    }
+      :<></>}
+      {alert && alert.pred === '1' ?   
+      <Alert style={{marginTop:'30px', textAlign:'center'}} variant={'danger'}>
+      {'Result: ' + alert.pred + ', ' + alert.prob + ' -->Go to Dashboard to see your status.'}
+      </Alert>
+      :<></>}
       
     </Form>
   );

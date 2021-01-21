@@ -1,14 +1,16 @@
 import React from "react";
 import { Alert, ProgressBar } from "react-bootstrap";
 import TopNavbar from "./TopNavbar";
-
+import { useGlobal } from 'reactn';
 export default function Dashboard() {
-  /////replace with real JSON file
-  const mockData = { pred: "0", prob: "0.4900" };
+   ////////////////////////////////////
+  const [ global, setGlobal ] = useGlobal()
+  const mockData = global;
   const mockDataToJson = JSON.stringify(mockData);
   ////////////////////////////////////
   const results = JSON.parse(mockDataToJson);
   const probability = parseFloat(results.prob).toFixed(2) * 100;
+  
   console.log(probability);
 
   return (
